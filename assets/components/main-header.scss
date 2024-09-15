@@ -38,3 +38,14 @@
     }
   }
 }
+
+@media only screen and (max-width: 1296px) {
+  .main-header {
+    width: 80vw;
+  }
+}
+@media only screen and (max-width: 550px) {
+  .main-header {
+    width: 90vw;
+  }
+}

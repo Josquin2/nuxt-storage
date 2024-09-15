@@ -42,4 +42,16 @@ const filteredItems = computed(() => {
   color: #2d3b87;
   font-size: 18px;
 }
+
+@media only screen and (max-width: 1296px) {
+  .all-cards {
+    width: 80vw;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .all-cards {
+    width: 90vw;
+  }
+}
 </style>

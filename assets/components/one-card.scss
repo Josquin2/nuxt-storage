@@ -199,3 +199,60 @@
     }
   }
 }
+
+@media only screen and (max-width: 1130px) {
+  .one-card {
+    flex-direction: column;
+
+    .right-side {
+      .card-footer {
+        justify-content: center;
+        margin-top: 24px;
+        .add-button {
+          width: 90%;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .one-card {
+    .left-side {
+      .photo {
+        img {
+          width: 222px;
+          height: 222px;
+        }
+      }
+    }
+    .right-side {
+      margin-top: 48px;
+    }
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .one-card {
+    .left-side {
+      flex-direction: column;
+
+      .photo {
+        justify-content: center;
+
+        img {
+          width: 78vw;
+          height: 78vw;
+        }
+      }
+
+      .card-info {
+        margin-top: 24px;
+      }
+    }
+
+    .right-side {
+      margin-top: 12px;
+    }
+  }
+}
