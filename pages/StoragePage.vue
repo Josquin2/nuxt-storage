@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import * as data from "../items.json";
+import data from "../items.json";
 import type { Card } from "~/types/Card";
 
-const items: Ref<Card[]> = ref(data?.default);
+const items: Ref<Card[]> = ref(data as Card[]);
 
 const search = ref("");
 const type = ref("Все типы");

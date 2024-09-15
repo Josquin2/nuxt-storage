@@ -3,11 +3,9 @@ import type { Card } from "~/types/Card";
 import FavoriteIcon from "./icons/FavoriteIcon.vue";
 import PlaceIcon from "./icons/PlaceIcon.vue";
 
-const props = defineProps({
-  item: Object,
-});
-
-const route = useRoute();
+const props = defineProps<{
+  item: Card;
+}>();
 
 const router = useRouter();
 const currentPath = ref(router.currentRoute.value.fullPath);
@@ -51,15 +49,11 @@ function onTransactionsClick(item: Card) {
 }
 
 function checkFavorites(item: Card) {
-  console.log("checking");
   const items = favoriteStore.getFavorites;
+  const favorite = document.getElementById(`card-${props?.item?.id}`);
   for (let i = 0; i < items.length; i++) {
     if (items[i].id == item.id) {
-      console.log(items);
-      console.log("yea");
-      document
-        .getElementById(`card-${props?.item?.id}`)
-        ?.classList?.add("favorite");
+      favorite?.classList?.add("favorite");
     }
   }
 }
@@ -74,9 +68,9 @@ function checkTransactions(item: Card) {
 }
 
 function onPayClick(item: Card) {
-  const cardId = document.getElementById(`card-${props?.item?.id}`)?.classList;
+  const cardId = document.getElementById(`card-${props?.item?.id}`);
   if (cardId) {
-    cardId?.add("paid");
+    cardId?.classList?.add("paid");
     isPaid.value = true;
   }
 }
@@ -295,17 +289,18 @@ onMounted(() => {
         cursor: pointer;
         width: max-content;
         background-color: #f4f5f9;
-        border: none;
+        border: 1px solid #f4f5f9;
         border-radius: 10px;
         padding: 17.5px 35.5px;
         font-size: 15px;
         color: #2d3b87;
         font-weight: 600;
-        min-width: 214px;
+        min-width: 216px;
       }
 
       .pay-button {
         background-color: #69c57f;
+        border: 1px solid #69c57f;
         color: #ffffff;
       }
 

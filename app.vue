@@ -7,6 +7,7 @@ console.log(route);
 <template>
   <MainHeader />
   <RouterView class="main-body" />
+  <MainFooter />
 </template>
 
 <style lang="scss">

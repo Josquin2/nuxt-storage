@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import type { Card } from "~/types/Card";
 
+const store = useTransactionsStore();
+
 const search = ref("");
 const type = ref("Все типы");
-
-const store = useTransactionsStore();
 
 const items: Ref<Card[]> = ref(store.getTransactions);
 </script>

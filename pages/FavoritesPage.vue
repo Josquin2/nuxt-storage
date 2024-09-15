@@ -5,7 +5,7 @@ const store = useFavoriteStore();
 
 const search = ref("");
 const type = ref("Все типы");
-console.log(store.getFavorites);
+
 const items: Ref<Card[]> = ref(store.getFavorites);
 </script>
 

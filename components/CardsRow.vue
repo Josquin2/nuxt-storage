@@ -1,23 +1,22 @@
 <script setup lang="ts">
 import type { Card } from "~/types/Card";
+import { ref, computed, defineProps } from "vue";
 
-const props = defineProps({
-  search: String,
-  type: String,
-  allItems: Array,
-});
+const props = defineProps<{
+  search: string;
+  type: string;
+  allItems: Card[];
+}>();
 
-const items: Ref<Card[]> = ref(props?.allItems);
+const items = ref<Card[]>(props.allItems);
 
 const filteredItems = computed(() => {
   return items.value.filter((item) => {
     const matchesSearch = item.name
       .toLowerCase()
       .includes(props.search.toLowerCase());
-    // console.log(props.type);
-    // console.log(item.item_type);
     const matchesType =
-      props.type === "Все типы" || item.sell_type == props.type;
+      props.type === "Все типы" || item.sell_type === props.type;
     return matchesSearch && matchesType;
   });
 });

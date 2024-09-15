@@ -1,23 +1,30 @@
-import { defineStore } from "pinia";
 import { type Card } from "~/types/Card";
 
-export const useTransactionsStore = defineStore({
-  id: "transactions",
-  state: (): { transactions: Card[] } => ({
-    transactions: [],
-  }),
+interface RootState {
+  transactions: Card[];
+  paidTransactions: Card[];
+}
+
+export const useTransactionsStore = defineStore("transactions", {
+  state: () =>
+    ({
+      transactions: [],
+      paidTransactions: [],
+    } as RootState),
   getters: {
-    getTransactions: (state) => {
+    getTransactions: (state: RootState): Card[] => {
       return state.transactions;
     },
   },
   actions: {
     setTransaction(data: Card) {
+      if (!data) return;
+
       this.transactions.push(data);
     },
     deleteTransaction(data: Card) {
       this.transactions = this.transactions.filter(
-        (transaction) => transaction.id !== data.id
+        (transaction: Card) => transaction.id !== data.id
       );
     },
   },
