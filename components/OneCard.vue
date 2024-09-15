@@ -23,6 +23,7 @@ const transactionsStore = useTransactionsStore();
 const isInTransactions = ref(false);
 const isPaid = ref(false);
 
+// format the number to thousands
 function formatPrice(price: number) {
   return price?.toString()?.replace(/\B(?=(\d{3})+(?!\d))/g, " ");
 }
@@ -67,11 +68,12 @@ function checkTransactions(item: Card) {
   }
 }
 
-function onPayClick(item: Card) {
+function onPayClick() {
   const cardId = document.getElementById(`card-${props?.item?.id}`);
   if (cardId) {
     cardId?.classList?.add("paid");
     isPaid.value = true;
+    // I think it's worth push changes to the store here
   }
 }
 
@@ -123,7 +125,7 @@ onMounted(() => {
       <div class="card-footer">
         <button
           v-if="currentPath == '/TransactionsPage'"
-          @click="onPayClick(props?.item)"
+          @click="onPayClick()"
           class="add-button pay-button"
           :disabled="isPaid"
         >

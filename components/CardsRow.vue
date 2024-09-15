@@ -10,6 +10,7 @@ const props = defineProps<{
 
 const items = ref<Card[]>(props.allItems);
 
+// return the filtered array
 const filteredItems = computed(() => {
   return items.value.filter((item) => {
     const matchesSearch = item.name

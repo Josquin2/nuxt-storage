@@ -6,6 +6,7 @@ const store = useTransactionsStore();
 const search = ref("");
 const type = ref("Все типы");
 
+// getting items from the store
 const items: Ref<Card[]> = ref(store.getTransactions);
 </script>
 

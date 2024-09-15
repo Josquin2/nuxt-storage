@@ -12,7 +12,6 @@ function onSearchClick() {
 
 function onTypeClick(clickedType: string) {
   type.value = clickedType;
-  console.log(type.value);
   emit("type", type.value);
 }
 </script>
