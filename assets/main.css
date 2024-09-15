@@ -1,5 +1,11 @@
+/* DEFAULT STYLES */
 @import url(./reset.css);
 @import url(./fonts.css);
+
+/* COMPONENTS */
+@import url(./components/one-card.scss);
+@import url(./components/search-bar.scss);
+@import url(./components/main-header.scss);
 
 #__nuxt {
   display: flex;

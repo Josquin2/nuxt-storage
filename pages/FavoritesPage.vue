@@ -10,7 +10,7 @@ const items: Ref<Card[]> = ref(store.getFavorites);
 </script>
 
 <template>
-  <div>
+  <div class="favorites-page">
     <SearchBar
       @search="(req) => (search = req)"
       @type="(req) => (type = req)"

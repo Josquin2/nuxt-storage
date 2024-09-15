@@ -1,12 +1,10 @@
 <script setup lang="ts">
 import "./assets/main.css";
-const route = useRoute();
-console.log(route);
 </script>
 
 <template>
   <MainHeader />
-  <RouterView class="main-body" />
+  <NuxtPage class="main-body" />
   <MainFooter />
 </template>
 

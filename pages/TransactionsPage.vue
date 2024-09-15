@@ -10,7 +10,7 @@ const items: Ref<Card[]> = ref(store.getTransactions);
 </script>
 
 <template>
-  <div>
+  <div class="transactions-page">
     <SearchBar
       @search="(req) => (search = req)"
       @type="(req) => (type = req)"
