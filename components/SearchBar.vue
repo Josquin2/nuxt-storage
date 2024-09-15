@@ -43,7 +43,12 @@ function onTypeClick(clickedType: string) {
       </button>
     </div>
     <div class="main-search">
-      <input type="text" v-model="search" v-on:keyup.enter="onSearchClick" />
+      <input
+        type="text"
+        v-model="search"
+        v-on:keyup.enter="onSearchClick"
+        placeholder="Поиск..."
+      />
       <button @click="onSearchClick"><SearchIcon /></button>
     </div>
   </div>

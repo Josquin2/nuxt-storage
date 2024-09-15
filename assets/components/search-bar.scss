@@ -40,6 +40,14 @@
       color: #2d3b87;
     }
 
+    input::placeholder {
+      color: #969dc3;
+    }
+
+    input::-ms-input-placeholder {
+      color: #969dc3;
+    }
+
     button {
       cursor: pointer;
       position: absolute;
