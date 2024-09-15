@@ -75,6 +75,18 @@
   .search-bar {
     flex-direction: column-reverse;
     gap: 18px;
+
+    .types {
+      width: 100%;
+      justify-content: center;
+    }
+    .main-search {
+      width: 100%;
+
+      input {
+        width: 100%;
+      }
+    }
   }
 }
 
