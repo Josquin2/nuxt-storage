@@ -90,7 +90,9 @@
           line-height: 20px;
           height: 64px;
           overflow: hidden;
-          text-overflow: ellipsis;
+          display: -webkit-box;
+          -webkit-line-clamp: 3;
+          -webkit-box-orient: vertical;
           color: #2d3b87;
           font-size: 13px;
         }
@@ -227,12 +229,12 @@
       }
     }
     .right-side {
-      margin-top: 48px;
+      margin-top: 24px;
     }
   }
 }
 
-@media only screen and (max-width: 550px) {
+@media only screen and (max-width: 600px) {
   .one-card {
     .left-side {
       flex-direction: column;
