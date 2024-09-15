@@ -23,6 +23,8 @@ export const useTransactionsStore = defineStore("transactions", {
       this.transactions.push(data);
     },
     deleteTransaction(data: Card) {
+      if (!data) return;
+
       this.transactions = this.transactions.filter(
         (transaction: Card) => transaction.id !== data.id
       );
