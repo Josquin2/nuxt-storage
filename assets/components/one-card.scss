@@ -256,3 +256,13 @@
     }
   }
 }
+
+@media only screen and (max-width: 400px) {
+  .one-card {
+    .left-side {
+      .card-info {
+        margin-left: 0;
+      }
+    }
+  }
+}
